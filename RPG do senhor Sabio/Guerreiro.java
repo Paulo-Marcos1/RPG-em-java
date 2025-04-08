@@ -1,21 +1,35 @@
 public class Guerreiro extends Personagem {
-    public Guerreiro() {
+    private String classe = "Guerreiro";
+
+    public Guerreiro(){
+        this.vida = 100;
+        this.defesa = 26;
+        this.ataque = 20;
     }
 
-    public void ataque() {
-        int ataque = 20;
+    public  String getClasse(){
+        return classe;
     }
 
-    public void defesa() {
-        int defesa = 26;
+    public int ataque() {
+
+        return ataque;
     }
 
-    public void vida() {
-        int vida = 100;
+    public int defesa() {
+
+        return defesa;
+    }
+
+    public int vida() {
+
+        return vida;
     }
 
     public void receberataque(int dano) {
-        this.vida = this.vida + this.defesa - dano;
+        System.out.println("A vida do " + this.nome + "era: " + this.vida);
+        this.vida = vida() + this.defesa - dano;
+        System.out.println("A vida do " + this.nome + "agora é: " + this.vida);
         if (this.vida < 1) {
             this.vida = 0;
         }
