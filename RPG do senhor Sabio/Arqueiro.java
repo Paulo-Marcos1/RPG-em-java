@@ -1,21 +1,36 @@
 public class Arqueiro extends Personagem {
-    public Arqueiro() {
+    private String classe = "Arqueiro";
+
+    public Arqueiro(){
+        this.vida = 100;
+        this.defesa = 15;
+        this.ataque = 15;
     }
 
-    public void ataque() {
-        int ataque = 15;
+    public void setClasse(String classe) {
+        this.classe = classe;
     }
 
-    public void defesa() {
-        int defesa = 15;
+    public String getClasse() {
+        return classe;
     }
 
-    public void vida() {
-        int vida = 100;
+    public int ataque() {
+        return ataque;
+    }
+
+    public int defesa() {
+        return defesa;
+    }
+
+    public int vida() {
+        return vida;
     }
 
     public void receberataque(int dano) {
-        this.vida = this.vida + this.defesa - dano;
+        System.out.println("A vida do " + this.nome + " era: " + vida());
+        vida = vida() + defesa - dano;
+        System.out.println("A vida do " + this.nome + " agora é: " + this.vida);
         if (this.vida < 1) {
             this.vida = 0;
         }
