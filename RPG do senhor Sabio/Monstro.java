@@ -2,22 +2,30 @@ public class Monstro extends Personagem {
     private String nome = "Ricardo Eletro";
 
     public Monstro() {
+        this.vida = 350;
+        this.ataque = 37;
+        this.defesa = 5;
     }
 
-    public void ataque() {
-        int ataque = 37;
+    public int ataque() {
+        return ataque;
     }
 
-    public void defesa() {
-        int defesa = 5;
+    public int defesa() {
+        return defesa;
     }
 
-    public void vida() {
-        int vida = 350;
+    public int vida() {
+        return vida;
     }
+
+
+
 
     public void receberataque(int dano) {
-        this.vida = this.vida + this.defesa - dano;
+        System.out.println("A vida do " + this.nome + " era: " + vida());
+        this.vida = vida() + defesa() - dano;
+        System.out.println("A vida do " + this.nome + " agora é: " + this.vida);
         if (this.vida < 1) {
             this.vida = 0;
         }
