@@ -7,8 +7,15 @@ public class Monstro extends Personagem {
         this.defesa = 0;
     }
 
+    @Override
+    public void infoAtaque() {
 
-    public int ataque() {
+    }
+
+    public int ataque(int escolha) {
+        if (escolha == 1){
+            this.ataque = 37;
+        }
         return ataque;
     }
 

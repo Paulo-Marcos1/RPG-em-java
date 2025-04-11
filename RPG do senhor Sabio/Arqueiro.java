@@ -1,16 +1,21 @@
 
 
-public class Arqueiro extends Personagem {
+public class Arqueiro extends Personagem{
     private String classe = "Arqueiro";
 
     public Arqueiro(){
         this.vida = 100;
-        this.defesa = 20;
-        this.ataque = 15;
+        this.defesa = 0;
+        this.ataque = 0;
     }
 
-
-
+    @Override
+    public void infoAtaque() {
+        System.out.println("Ataque 1: Ataque normal 15 de dano!");
+        System.out.println("Ataque 2: Flechada dupla 30 de dano!");
+        System.out.println("Ataque 3: Saraivada de flechas 50 de dano!");
+        System.out.print("Escolha:");
+    }
 
     public void setClasse(String classe) {
         this.classe = classe;
@@ -20,8 +25,28 @@ public class Arqueiro extends Personagem {
         return classe;
     }
 
-    public int ataque() {
-        return ataque;
+    public int ataque(int escolha) {
+
+            switch (escolha) {
+                case 3:
+                    System.out.println("Voce escolheu saraivada de flechas!");
+                    this.ataque = 50;
+                    break;
+                case 2:
+                    System.out.println("Flechada dupla!");
+                    this.ataque = 30;
+                    break;
+                case 1:
+                    System.out.println("Ataque normal!");
+                    this.ataque = 15;
+                    break;
+                default:
+                    System.out.println("Opção invalida");
+
+            }
+            return ataque;
+
+
     }
 
     public int defesa() {

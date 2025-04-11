@@ -19,7 +19,7 @@ abstract class Personagem {
         this.nome = nome;
     }
 
-    public abstract int ataque();
+    public abstract int ataque(int escolha);
 
     public abstract int vida();
 
@@ -28,6 +28,8 @@ abstract class Personagem {
     public abstract void receberataque(int dano);
 
     public abstract void atacar();
+
+    public abstract void  infoAtaque();
 
 
 }

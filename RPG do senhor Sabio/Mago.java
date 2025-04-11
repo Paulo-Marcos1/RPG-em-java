@@ -11,7 +11,8 @@ public class Mago extends Personagem {
         return classe;
     }
 
-    public int ataque() {
+    public int ataque(int escolha) {
+
         return ataque;
     }
 
@@ -21,6 +22,11 @@ public class Mago extends Personagem {
 
     public int vida() {
         return vida;
+    }
+
+    @Override
+    public void infoAtaque() {
+
     }
 
     @Override
