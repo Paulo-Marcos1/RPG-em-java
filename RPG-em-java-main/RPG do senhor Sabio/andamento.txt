@@ -1,0 +1,5 @@
+jogo funcionando!
+
+
+falta fazer variedades para o monstro
+falta diminuir a velocidade das ações
