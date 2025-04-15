@@ -1,4 +1,5 @@
 jogo funcionando!
 
-falta colocar habilidades nas outras classes tirando arqueiro
-falta colocar chances de acertos em alguns ataques e fazer outras implementações
+
+falta fazer variedades para o monstro
+falta diminuir a velocidade das ações

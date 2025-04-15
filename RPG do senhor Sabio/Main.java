@@ -12,7 +12,8 @@ public class Main {
         Monstro monstro = new Monstro();
 
         while(jogador == null) {
-            System.out.print("Digite 1: Para mago \nDigite 2: Para arqueiro \nDigite 3 Para guerreiro \nEscolha:");
+
+            System.out.print("Digite 1: Para mago \nDigite 2: Para arqueiro \nDigite 3: Para guerreiro \nEscolha: ");
             int escolha = input.nextInt();
             input.nextLine();
 
@@ -38,7 +39,7 @@ public class Main {
         System.out.print("Digite seu nome: ");
         String nome = input.nextLine();
         jogador.setNome(nome);
-        System.out.println("Olá "+ jogador.getClasse() + " "+jogador.getNome() + " começará agora sua nova aventura!");
+        System.out.println("Olá "+ jogador.getClasse() + " "+jogador.getNome() + ", começará agora sua nova aventura!");
         int turno = 0;
         int escolha ;
         while(true) {
@@ -47,12 +48,13 @@ public class Main {
                 System.out.println("-------------------------");
                 System.out.println(turno + "ª Turno vez do " + jogador.getNome());
                 Thread.sleep(400);
+                int dano = 0;
                 while(true) {
                     jogador.infoAtaque();
                     Thread.sleep(400);
                     escolha_ataque = input.nextInt();
                     input.nextLine();
-                    jogador.ataque(escolha_ataque);
+                    dano = jogador.ataque(escolha_ataque);
                     if (escolha_ataque == 1 || escolha_ataque == 2 || escolha_ataque == 3) {
                         break;
                     }else{
@@ -64,7 +66,7 @@ public class Main {
                             System.out.println(monstro.getNome() + " escolheu o modo defesa!");
                             Thread.sleep(400);
                             monstro.defesa = 5;
-                            monstro.receberataque(jogador.ataque(escolha_ataque));
+                            monstro.receberataque(dano);
                             monstro.defesa = 0;
                             break;
                         case 2:
@@ -74,7 +76,7 @@ public class Main {
                             if (tentativa != 0) {
                                 System.out.println("O contra-ataque do " + monstro.getNome() + " falhou!");
                                 Thread.sleep(400);
-                                monstro.receberataque(jogador.ataque(escolha_ataque));
+                                monstro.receberataque(dano);
                                 break;
                             } else {
                                 System.out.println(monstro.getNome() + " teve sucesso ao contra atacar!");
